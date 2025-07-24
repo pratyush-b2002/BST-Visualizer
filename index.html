@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BST Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app" class="container flex flex-col gap-16 py-16">
+    <!-- Control Panel -->
+    <section id="controls" class="flex flex-col gap-16" style="flex:1 1 280px;">
+      <h1>BST Visualizer</h1>
+      <div class="flex gap-8 items-center">
+        <label for="value-input" class="form-label sr-only">Value</label>
+        <input id="value-input" type="number" class="form-control" placeholder="Enter value" aria-label="numeric value" />
+        <button id="insert-btn" class="btn btn--primary" aria-label="Insert value">Insert</button>
+        <button id="delete-btn" class="btn btn--outline" aria-label="Delete value">Delete</button>
+        <button id="search-btn" class="btn btn--outline" aria-label="Search value">Search</button>
+      </div>
+
+      <div class="flex gap-8 items-center">
+        <button id="inorder-btn" class="btn btn--secondary" aria-label="In-order traversal">In-order</button>
+        <button id="preorder-btn" class="btn btn--secondary" aria-label="Pre-order traversal">Pre-order</button>
+        <button id="postorder-btn" class="btn btn--secondary" aria-label="Post-order traversal">Post-order</button>
+      </div>
+
+      <div class="card" style="max-height:160px; overflow:auto;">
+        <div class="card__header"><h3>Traversal Output</h3></div>
+        <div id="traversal-output" class="card__body flex gap-8 flex-wrap"></div>
+      </div>
+    </section>
+
+    <!-- Visualization Area -->
+    <section id="visualization" class="flex-1" style="min-height:420px;">
+      <svg id="tree-svg" width="100%" height="100%" aria-label="BST visualization" role="img"></svg>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
